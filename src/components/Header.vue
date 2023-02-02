@@ -1,38 +1,44 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 
-defineProps<{ msg: string }>()
+const menus = [
+  { name: "About", link: "#about" },
+  { name: "Experience", link: "#experience" },
+  { name: "Testimonials", link: "#testimonials" },
+  { name: "Contact", link: "#contact" },
+]
 
-const count = ref(0)
+const moveToElement = (element) => {
+  document.querySelector(element)!.scrollIntoView({ behavior: "smooth" });
+
+}
+
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <nav class="w-full relative flex flex-row justify-between items-center bg-white dark:bg-gray-800">
+    <span class="logo text-4xl"><a href="/">KA</a></span>
+    <div class="flex menu-items items-center">
+      <ol class="flex flex-row justify-between items-center">
+        <li v-for="menuItem in menus" class="relative mx-2.5">
+          <span @click="moveToElement(menuItem.link)" class="p-2.5">{{ menuItem.name }}</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
+.logo {
+  font-family: var(--font-mono);
+}
+
+li {
+  counter-increment: item 1;
+}
+
+.menu-items span::before {
+  content: "0" counter(item) ".";
+  margin-right: 5px;
+  font-family: var(--font-mono);
 }
 </style>
