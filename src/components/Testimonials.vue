@@ -86,10 +86,6 @@ const testimonials = [
 </template>
 
 <style scoped>
-* {
-  border: 1px solid black;
-}
-
 .numbered-heading::before {
   position: relative;
   counter-increment: section 1;
