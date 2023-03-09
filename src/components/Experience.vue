@@ -14,9 +14,9 @@ const exps = [
 <template>
   <section id="experience" class="py-24">
     <h2 class="numbered-heading text-4xl font-semibold leading-tight capitalize pb-20">Experience</h2>
-    <div class="grid grid-flow-row grid-cols-3 grid-rows-2 gap-8">
+    <div class="flex flex-wrap justify-center gap-10">
       <div v-for="exp in exps"
-        class="max-w-full p-6 border border-gray-300 rounded-lg shadow">
+        class="max-w-full w-72 p-6 border border-gray-300 rounded-lg shadow">
         <vue-feather class="w-10 h-10 mb-2 text-black dark:text-gray-400" :type="exp.icon"></vue-feather>
         <h5 class="mb-2 text-2xl font-semibold tracking-tight">{{ exp.title}}
         </h5>

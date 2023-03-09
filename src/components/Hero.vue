@@ -16,7 +16,7 @@ import CanvaTest from './CanvaTest.vue'
           systems.
         </p>
       </div>
-      <div class="h-full w-4/12 z-0 pt-16">
+      <div class="h-full w-4/12 z-0 pt-16 md:block hidden">
         <CanvaTest />
       </div>
     </div>

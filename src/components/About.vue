@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { onMounted } from 'vue'
-import { Tabs } from "flowbite";
-import type { TabsOptions, TabsInterface, TabItem } from "flowbite";
+import {ref} from 'vue'
+import {onMounted} from 'vue'
+import {Tabs} from "flowbite";
+import type {TabsOptions, TabsInterface, TabItem} from "flowbite";
 
 onMounted(() => {
   const tabElements: TabItem[] = [
@@ -31,7 +31,8 @@ onMounted(() => {
     defaultTabId: 'settings',
     activeClasses: 'border-b-3 border-black',
     inactiveClasses: 'hover:border-gray-300',
-    onShow: () => { }
+    onShow: () => {
+    }
   };
 
   const tabs: TabsInterface = new Tabs(tabElements, options);
@@ -46,45 +47,51 @@ const count = ref(0)
 <template>
   <section id="about" class="py-24">
     <h2 class="numbered-heading text-4xl font-semibold leading-tight capitalize">About Me</h2>
-    <div class="inner">
-      <div class="mt-14">
+    <div class="inner ">
+      <div class="mt-14 md:w-1/3">
         <p>Hello! My name is Konstantins and I enjoy building systems. My interest in programming
           started back in 2012 when I found out, that there is much more you can do with a computer.
-          In the beginning I was having a lot of fun with just HMTL & CSS, later experimenting with scripting.</p>
+          In the beginning I was having a lot of fun with just HTML & CSS, later experimenting with scripting.</p>
         <p>Fast-forward to today, and I’ve had the privilege of working at <a href="https://www.accenture.com/lv-en"
-            rel="noopener noreferrer" target="_blank">an IT services and consulting company</a>, <a
+                                                                              rel="noopener noreferrer" target="_blank">an
+          IT services and consulting company</a>, <a
             href="https://www.caru-care.com/" rel="noopener noreferrer" target="_blank">a start-up</a>, <a
-            href="https://www.rtu.lv/en" rel="noopener noreferrer" target="_blank">unviversity</a>, and <a
+            href="https://www.rtu.lv/en" rel="noopener noreferrer" target="_blank">university</a>, and <a
             href="https://www.lmt.lv/lv/" rel="noopener noreferrer" target="_blank">telecommunication company</a>.
 
           My main focus these days is building accessible, scalable, high demand systems for a variety of
           clients.
         </p>
       </div>
-      <div>
-        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-          <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400" id="tab"
-            role="tablist">
+      <div class="md:w-2/3 skills">
+        <div class="mb-4 dark:border-gray-700">
+          <ul class="flex flex-wrap justify-center lg:flex-nowrap flow-col -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400"
+              id="tab"
+              role="tablist">
             <li class="mr-2" role="presentation">
-              <button class="inline-block p-4 border-b-2  rounded-t-lg" id="technical-tab"
-                type="button" role="tab" aria-controls="technical" aria-selected="false">
-                Technical skills</button>
+              <button class="inline-block whitespace-nowrap p-4 border-b-2  rounded-t-lg" id="technical-tab"
+                      type="button" role="tab" aria-controls="technical" aria-selected="false">
+                Technical skills
+              </button>
             </li>
             <li class="mr-2" role="presentation">
-              <button class="inline-block p-4 border-b-2  rounded-t-lg" id="soft-tab" type="button"
-                role="tab" aria-controls="soft" aria-selected="false">Soft skills</button>
+              <button class="inline-block whitespace-nowrap p-4 border-b-2  rounded-t-lg" id="soft-tab" type="button"
+                      role="tab" aria-controls="soft" aria-selected="false">Soft skills
+              </button>
             </li>
             <li class="mr-2" role="presentation">
               <button class="inline-block p-4 border-b-2  rounded-t-lg" id="certificates-tab"
-                type="button" role="tab" aria-controls="certificates" aria-selected="false">Certificates</button>
+                      type="button" role="tab" aria-controls="certificates" aria-selected="false">Certificates
+              </button>
             </li>
             <li role="presentation">
               <button class="inline-block p-4 border-b-2  rounded-t-lg " id="education-tab"
-                type="button" role="tab" aria-controls="education" aria-selected="false">Education</button>
+                      type="button" role="tab" aria-controls="education" aria-selected="false">Education
+              </button>
             </li>
           </ul>
         </div>
-        <div id="tabContent" class="h-56 min-h-full">
+        <div id="tabContent" class="min-h-full">
           <div class="hidden p-4 rounded-lg" id="soft" role="tabpanel" aria-labelledby="soft-tab">
             <ul class="skills-list">
               <li>Adaptability</li>
@@ -168,10 +175,22 @@ const count = ref(0)
   background-color: var(--dark-slate);
 }
 
+@media only screen and (max-width: 768px) {
+  .inner {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .inner {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 100px;
 }
 
 ul.skills-list {

@@ -13,7 +13,7 @@ const count = ref(0)
 
 <template>
   <div id="content">
-    <main class="px-24">
+    <main class="px-24 w-100">
       <Hero />
       <About />
       <Experience />

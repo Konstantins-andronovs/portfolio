@@ -14,7 +14,7 @@ const count = ref(0)
   <header class="h-20 z-20 fixed w-full px-6 flex justify-between items-center bg-white">
     <Header />
   </header>
-  <div class="h-screen">
+  <div class="min-h-screen">
     <Content />
   </div>
   <div class="fixed w-10 bottom-0 left-5 bg-transparent">
