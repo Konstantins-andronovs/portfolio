@@ -51,14 +51,13 @@ const count = ref(0)
       <div class="mt-14 md:w-1/3">
         <p>Hello! My name is Konstantins and I enjoy building systems. My interest in programming
           started back in 2012 when I found out, that there is much more you can do with a computer.
-          In the beginning I was having a lot of fun with just HTML & CSS, later experimenting with scripting.</p>
+          In the beginning I was having a lot of fun with just HTML & CSS, later experimenting with scripting and algorithms.</p>
         <p>Fast-forward to today, and I’ve had the privilege of working at <a href="https://www.accenture.com/lv-en"
                                                                               rel="noopener noreferrer" target="_blank">an
           IT services and consulting company</a>, <a
             href="https://www.caru-care.com/" rel="noopener noreferrer" target="_blank">a start-up</a>, <a
             href="https://www.rtu.lv/en" rel="noopener noreferrer" target="_blank">university</a>, and <a
             href="https://www.lmt.lv/lv/" rel="noopener noreferrer" target="_blank">telecommunication company</a>.
-
           My main focus these days is building accessible, scalable, high demand systems for a variety of
           clients.
         </p>
